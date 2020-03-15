@@ -1,13 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: MyString
-  _id: 1
+  user_id: 1
+  descriptionrails: MyString
+  g: MyString
+  model: MyString
+  Topic: MyString
+  user_id: 1
   description: MyString
   image: MyString
 
 two:
-  user: MyString
-  _id: 1
+  user_id: 1
+  descriptionrails: MyString
+  g: MyString
+  model: MyString
+  Topic: MyString
+  user_id: 1
   description: MyString
   image: MyString
