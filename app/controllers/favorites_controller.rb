@@ -14,4 +14,10 @@ class FavoritesController < ApplicationController
       redirect_to topics_path, danger: "お気に入りの登録に失敗しました"
     end
   end
+  
+    def destroy
+      @topic = Topic.find_by(user_id: current_user.id, topic_id: params[:topic_id])
+      @topic.destory
+      redirect_to topics_path, success: "いいねを取り消しました"
+    end
 end
