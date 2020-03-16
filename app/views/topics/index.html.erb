@@ -11,10 +11,22 @@
             <% if !topic.favorite_users.include?(current_user) %>
               <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
                 <i class="far fa-heart like-btn" ></i>
+                <%= form_with(model: [@topic, @comment], local: true) do |f| %>
+                  <%= f.text_area :content, class: "form-control", rows: 5 %>
+                  <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>
+                    <i class="far fa-comments"></i> コメントする
+                  <% end %>
+                <% end %>
               <% end %>
             <% else %>
               <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
                 <i class="fas fa-heart unlike-btn"></i>
+                <%= form_with(model: [@topic, @comment], local: true) do |f| %>
+                  <%= f.text_area :content, class: "form-control", rows: 5 %>
+                  <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>
+                    <i class="far fa-comments"></i> コメントする
+                  <% end %>  
+                <% end %>
               <% end %>  
             <% end %>
             <p class="topic-text">
